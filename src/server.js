@@ -18,8 +18,8 @@ connectDB();
 
 // CORS configuration for deployment
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*', // Will add Vercel URL later
-  credentials: true,
+  origin: '*',  // ✅ Allow ALL origins
+  credentials: false,  // Must be false when origin is '*'
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
   allowedHeaders: ['Content-Type', 'x-admin-key', 'Authorization']
 }));
